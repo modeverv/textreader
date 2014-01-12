@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="icon" href="http://ja.gravatar.com/userimage/14611836/d5caef2a5366cf647fc8fba3430e5854.png" type="image/png">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src=http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="<%= get_prefix %>/css/pc.css" type="text/css" media="screen" />
+<!--
+    <script type="text/javascript" src="<%= get_prefix %>/jquery.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.6/jquery.tools.min.js"></script>
+
+    <script type="text/javascript" src="<%= get_prefix %>/scripts/application.js"></script>
+-->
+    <script>
+      var linklist = {
+        ar : <%= @files %>,
+        index : 0,
+        index2: 0,
+        Next : function(){
+          this.index += 1;
+          if(this.ar.length <= this.index){
+              this.index = 0;
+          }
+          emit = this.ar[this.index]
+          return emit;
+        },
+        Prev : function(){
+          this.index -= 1;
+          if(0 > this.index){
+              this.index = this.ar.length - 1
+          }
+          emit = this.ar[this.index]
+          return emit;
+        },
+        DryNext : function(){
+          this.index2 += 1;
+          if(this.ar.length <= this.index2){
+              this.index2 = 0;
+          }
+          emit = this.ar[this.index2]
+          return emit;
+        },
+        DryPrev : function(){
+          this.index2 -= 1;
+          if(0 > this.index2){
+              this.index2 = this.ar.length - 1
+          }
+          emit = this.ar[this.index2]
+          return emit;
+        }
+      };
+        
+      plAr= new Array();
+          
+      function poolImg(url){
+          console.log(url);
+          if(!plAr[url]){
+            img = new Image();
+            img.src = url;
+            console.log(img);
+            plAr[url] = img;
+          }
+      }
+
+      function debug(x){
+         console.log(x);
+      }
+      function n(){
+         document.getElementById("now").innerHTML = linklist.index;
+      }
+      function imgTag(url){
+         if(plAr[url]){
+          debug("cache hit");
+         }
+         //fast
+         html = '<img src="#{url}" class="" alt="" />'.replace('#{url}',url);
+         document.getElementById("main").innerHTML = html;
+         //slow document.getElementById("canvas").src = url;
+
+         n();
+      }
+      
+      function getPrev(){
+         url = linklist.Prev();
+         imgTag(url);
+         for(var i=0;i < 5;i++){
+           poolImg(linklist.DryPrev());
+         }
+      }
+        
+      function getNext(){
+         url = linklist.Next();
+         imgTag(url);
+         for(var i=0;i < 5;i++){
+           poolImg(linklist.DryNext());
+         }
+      }
+      document.onkeydown = function(e) {
+         var shift, ctrl; 
+         keycode = e.which; 
+         key = String.fromCharCode(keycode);
+debug(key);
+         switch(key){
+            case "'":
+               getNext();break;
+            case '%':     
+               getPrev();break;
+           default:
+               break;
+         }
+      }
+     </script>     
+
+  </head>
+  <body>
+    <header>
+      <div id="apptitle"><a href='/textreader'><h1 class="logo"><%= title %></h1></a>
+(<span id="now">0</span>/<%= @s.size %>)
+<input type="button" value="prev" onclick="getPrev();return false;" />
+<input type="button" value="next" onclick="getNext();return false;" />
+</div>
+<div class="clearboth"></div>
+    </header>
+    
+    <div id="wrapper">
+      <div id="main">&nbsp;</div>
+    </div>
+
+    <footer>
+      <p id="echo_pool" class="old">modeverv＠gmail.com</p>
+    </footer>
+<script>
+      document.onload = (function(){
+           getNext();
+      })();
+</script>
+  </body>
+</html>
+
+

@@ -1,0 +1,124 @@
+/* reset */
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Rock+Salt|Shadows+Into+Light);
+/*@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);*/
+
+* {
+   margin:0;
+   padding:0;
+}
+html{
+}
+body {
+   font-size:24px; 
+   font-family:'Josefin Sans',"ＤＦ細丸ゴシック体","ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", sans-serif; 
+/*     text-shadow:0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb; */
+   line-height:1.75em; 
+   color:#111;
+   height: 100%; 
+   overflow-x:hidden; 
+   width:100%; 
+   background:#fff; 
+}
+/* layout */
+header,footer , #wrapper {
+   width:950px;
+   margin:0 auto;
+   clear:both;
+   margin-top:5px;
+}
+header {
+   margin-top:1em;
+}   
+#wrapper{
+   margin-top:1.5em;
+}
+ul#index li{
+   font-size:16px;
+   line-height:30px;
+}
+/* layout 2 */
+img{
+   display:block;
+   max-width:950px;
+   margin:0 auto;
+}
+h1{
+  color:#E2863A;
+  color:#E90955;
+  color:#272F7C;
+}
+h2,h3,h4,a:hover{
+  color:#E90955;
+}
+h1 {
+   float:left;
+   font-weight:lighter;
+   font-size:2.5em;
+}
+h2 {
+   margin:0;
+   font-weight:lighter;
+   font-size:1.3em;
+}
+h3 {
+   margin:1.0em 0 0.2em 0em;
+   font-weight:lighter;
+}
+h4 {
+   margin:2em 0 1em 0em;
+   font-weight:lighter;
+   text-align:right;
+}
+a {
+  color:#000;
+  text-decoration:none; 
+}   
+a:hover {
+  text-decoration:underline; 
+}
+p {
+   font-weight:normal; 
+}   
+.clearboth {
+   clear:both;
+   width:100%;
+   height:1px;
+}   
+div#apptitle,
+div#echoarea,
+div#search,
+div#m3u {
+   height:21px;
+}
+
+div#apptitle {
+   width:450px;
+   float:left;
+   height:50px;
+}
+div#apptitle a{
+/*
+   font-family:"Josefin Sans"
+   font-family:"Rock Salt"
+*/   
+   font-family:"Shadows Into Light"
+}
+div#echoarea{
+   width:10px;
+   float:left;
+}   
+#echo_pool {
+   width:40%;
+   height:20px;
+   float:right;
+   text-align:right;
+   font-size:0.5em;
+}
+div,li {
+/*  border:1px solid;*/
+}
+.old {
+ display:inline;
+ font-family:Georgia,Constantia,Hoefler Text,serif;
+ font-weight: lighter;
+}

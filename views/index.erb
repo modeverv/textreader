@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="icon" href="http://ja.gravatar.com/userimage/14611836/d5caef2a5366cf647fc8fba3430e5854.png" type="image/png">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src=http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="pc.css" type="text/css" media="screen" />
+<!--    
+    <link href="/<%= @prefix %>/iphone.css?<%=Time.now.to_i.to_s%>" rel="stylesheet" type= "text/css" media="only screen and (max-device-width: 480px)">
+-->    
+    <script type="text/javascript" src="<%= get_prefix %>/jquery.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.6/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="application.js"></script>
+<% if @uramode %>
+  <style>
+   body,a{
+     color:red;
+     background:black;
+   }
+   .logo{
+     color:yellow;
+   }
+   a:hover{
+     color:yellow;
+   }
+  </style>
+<% end %>
+    
+  </head>
+  <body>
+    <header>
+      <div id="apptitle"><a href='<%= @prefix %>/'><h1 class="logo"><%= title %><%= "::hidden" if @uramode %></h1></a></div>
+      <div class="clearboth"></div>
+    </header>
+    
+    <div id="wrapper">
+      <ul id="index">
+      <% @text_files.each do |file| %>
+        <li><a href="<%= get_prefix %>/read?file=<%= file %>"><%= file %></a></li>
+      <% end %>
+      <hr/>
+       <li><a href="<%= get_prefix %>/dojin/all">ALL</a></li>
+      <% @dirs.each do |d| %>
+        <li><a href="<%= d %>"><%= d %></a></li>
+      <% end %>
+
+      </ul>
+    </div>
+    <div id="wrapper2"></div>
+    
+    <footer>
+      <p id="echo_pool" class="old">modeverv＠gmail.com</p>
+    </footer>
+  </body>
+</html>
+
+

@@ -1,0 +1,10 @@
+source :rubygems
+gem 'padrino','0.10.7'
+gem 'padrino-core','0.10.7'
+gem 'sinatra'
+gem 'sinatra-xsendfile'
+gem 'sinatra-reloader'
+gem 'unicorn'
+gem 'puma'
+gem 'unicorn'
+gem 'thin'

@@ -1,0 +1,4 @@
+tmp/*
+*.log
+*_flymake*
+.DS_Store
