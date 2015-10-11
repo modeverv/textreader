@@ -9,7 +9,7 @@
 html{
 }
 body {
-   font-size:30px; 
+   font-size:16px; 
    font-family:"A-OTF リュウミン Pro",'Josefin Sans',"ＤＦ細丸ゴシック体";
 /*   font-family:'Josefin Sans',"ＤＦ細丸ゴシック体","ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", sans-serif; */
 /*   text-shadow:0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb; */
@@ -23,7 +23,7 @@ body {
 }
 /* layout */
 header,footer , #wrapper {
-   width:950px;
+   width:480px;
    margin:0 auto;
    clear:both;
    margin-top:5px;
@@ -41,7 +41,7 @@ ul#index li{
 /* layout 2 */
 img{
    display:block;
-   max-width:950px;
+   max-width:480px;
    margin:0 auto;
 }
 h1{
@@ -58,10 +58,11 @@ h1 {
    font-weight:lighter;
    font-size:2.5em;
 }
-h2 {
+h2>p {
    margin:0;
    font-weight:lighter;
    font-size:3.3em;
+   line-height:1.1em;
 }
 h3 {
    margin:1.0em 0 0.2em 0em;
@@ -80,7 +81,9 @@ a:hover {
   text-decoration:underline; 
 }
 p {
-   font-weight:normal; 
+   font-weight:normal;
+   line-height:2em;
+   margin-top:0.5em;
 }   
 .clearboth {
    clear:both;
