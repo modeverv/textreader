@@ -14,4 +14,4 @@ in `main.rb`,change `USERNAME`,`PASS`,`FILEDIR`
 # passenger or unicorn + nxinx
 
 # CHANGELOG
-2015/10/11 2hまとめSSにちょっと対応、デザインちょっと変更　幅狭く
+2015/10/11 2chまとめSSにちょっと対応、デザインちょっと変更　幅狭く
