@@ -1,5 +1,5 @@
 /* reset */
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Rock+Salt|Shadows+Into+Light);
+@import url(//fonts.googleapis.com/css?family=Josefin+Sans|Rock+Salt|Shadows+Into+Light);
 /*@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);*/
 
 * {
@@ -9,8 +9,9 @@
 html{
 }
 body {
-   font-size:16px; 
-   font-family:"A-OTF リュウミン Pro",'Josefin Sans',"ＤＦ細丸ゴシック体";
+   font-size:30px; 
+   font-family:'Josefin Sans',"ＤＦ細丸ゴシック体";
+/*   font-family:"A-OTF Ryumin Pro","A-OTF リュウミン Pro",'Josefin Sans',"ＤＦ細丸ゴシック体"; */
 /*   font-family:'Josefin Sans',"ＤＦ細丸ゴシック体","ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", sans-serif; */
 /*   text-shadow:0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb, 0 0 1px #bbb; */
    line-height:1.75em; 
@@ -23,10 +24,15 @@ body {
 }
 /* layout */
 header,footer , #wrapper {
-   width:480px;
+/*   width:640px; */
+   width:90%;
    margin:0 auto;
    clear:both;
    margin-top:5px;
+ /*
+   margin-left:40px;
+   margin-right:40px;
+ */  
 }
 header {
    margin-top:1em;
